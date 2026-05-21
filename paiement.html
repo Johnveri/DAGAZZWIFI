@@ -2,88 +2,519 @@
 <html lang="fr">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Paiement WiFi</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body{
-      margin:0;
-      font-family:Arial, sans-serif;
-      background:#0b0f14;
-      color:white;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      height:100vh;
-    }
+<title>Paiement WiFi Dagazz</title>
 
-    .card{
-      background:#111827;
-      padding:25px;
-      border-radius:15px;
-      width:300px;
-      text-align:center;
-      box-shadow:0 0 15px rgba(0,0,0,0.5);
-    }
+<style>
 
-    h1{
-      font-size:20px;
-      margin-bottom:15px;
-    }
+/* ================= RESET ================= */
 
-    .price{
-      font-size:28px;
-      color:#22c55e;
-      margin:15px 0;
-      font-weight:bold;
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
 
-    .btn{
-      display:block;
-      width:100%;
-      padding:12px;
-      border-radius:10px;
-      background:#2563eb;
-      color:white;
-      text-align:center;
-      font-weight:bold;
-      text-decoration:none;
-      margin-top:15px;
-      transition:0.3s;
-    }
+body{
+  min-height:100vh;
 
-    .btn:hover{
-      background:#1d4ed8;
-      transform:scale(1.03);
-    }
+  background:
+  linear-gradient(rgba(5,0,20,0.95),rgba(5,0,20,0.95)),
+  radial-gradient(circle at top,#6f00ff33,#000);
 
-    .info{
-      font-size:14px;
-      opacity:0.8;
-    }
-  </style>
+  color:white;
+
+  display:flex;
+  justify-content:center;
+
+  padding:12px;
+}
+
+/* ================= CONTAINER ================= */
+
+.container{
+  width:100%;
+  max-width:500px;
+}
+
+/* ================= LOGO ================= */
+
+.logo{
+  text-align:center;
+  margin-bottom:12px;
+}
+
+.logo img{
+  width:130px;
+}
+
+/* ================= TITLE ================= */
+
+.title{
+  text-align:center;
+  margin-bottom:18px;
+}
+
+.title h1{
+  font-size:26px;
+  margin-bottom:6px;
+}
+
+.title p{
+  color:#b6b6d2;
+  font-size:12px;
+}
+
+/* ================= CARD ================= */
+
+.card{
+  background:#0f0b25;
+
+  border:1px solid #7b2cff;
+
+  border-radius:20px;
+
+  padding:18px;
+
+  box-shadow:0 0 20px rgba(128,0,255,0.2);
+}
+
+/* ================= PLAN ================= */
+
+.plan-box{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  background:#140d32;
+
+  border:1px solid #7b2cff;
+
+  border-radius:14px;
+
+  padding:14px;
+
+  margin-bottom:22px;
+}
+
+.plan-left{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.icon{
+  width:45px;
+  height:45px;
+
+  border-radius:12px;
+
+  background:linear-gradient(135deg,#c84dff,#6f00ff);
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  font-size:18px;
+}
+
+.plan-info h3{
+  color:#b84cff;
+  font-size:11px;
+  margin-bottom:4px;
+}
+
+.plan-info h2{
+  font-size:20px;
+}
+
+.price{
+  font-size:28px;
+  color:#b84cff;
+  font-weight:bold;
+}
+
+/* ================= PAYMENT TITLE ================= */
+
+.payment-title{
+  text-align:center;
+  font-size:14px;
+  margin-bottom:15px;
+  color:#ddd;
+}
+
+/* ================= METHODS ================= */
+
+.payment-methods{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+
+  margin-bottom:20px;
+}
+
+.method{
+  background:#140d32;
+
+  border:1px solid #6f00ff;
+
+  border-radius:14px;
+
+  padding:15px;
+
+  text-align:center;
+}
+
+.method img{
+  height:38px;
+  margin-bottom:10px;
+}
+
+.method h3{
+  color:#ddd;
+  margin-bottom:8px;
+  font-size:13px;
+}
+
+.number{
+  font-size:20px;
+  font-weight:bold;
+  color:#b84cff;
+
+  margin-bottom:10px;
+}
+
+/* ================= COPY BUTTON ================= */
+
+.copy-btn{
+  background:#7b2cff;
+
+  border:none;
+
+  padding:8px 12px;
+
+  border-radius:8px;
+
+  color:white;
+
+  font-size:12px;
+
+  font-weight:bold;
+
+  cursor:pointer;
+}
+
+/* ================= HOW ================= */
+
+.how{
+  background:#140d32;
+
+  border:1px solid #6f00ff;
+
+  border-radius:14px;
+
+  padding:15px;
+
+  margin-bottom:18px;
+}
+
+.how h2{
+  color:#b84cff;
+  margin-bottom:10px;
+  font-size:16px;
+}
+
+.how p{
+  color:#ddd;
+  line-height:1.7;
+  font-size:12px;
+}
+
+/* ================= INPUT ================= */
+
+.input-box{
+  margin-bottom:15px;
+}
+
+.input-box label{
+  display:block;
+
+  margin-bottom:8px;
+
+  color:#ccc;
+
+  font-size:12px;
+
+  font-weight:bold;
+}
+
+.input-box input{
+  width:100%;
+
+  padding:12px;
+
+  border-radius:10px;
+
+  border:1px solid #6f00ff;
+
+  background:#0b081b;
+
+  color:white;
+
+  font-size:14px;
+
+  outline:none;
+}
+
+/* ================= PAY BUTTON ================= */
+
+.pay-btn{
+  width:100%;
+
+  padding:14px;
+
+  border:none;
+
+  border-radius:12px;
+
+  background:linear-gradient(135deg,#d14dff,#6f00ff);
+
+  color:white;
+
+  font-size:18px;
+
+  font-weight:bold;
+
+  cursor:pointer;
+}
+
+/* ================= FOOTER ================= */
+
+.secure{
+  text-align:center;
+
+  margin-top:18px;
+
+  color:#aaa;
+
+  line-height:1.5;
+
+  font-size:12px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:550px){
+
+  .payment-methods{
+    grid-template-columns:1fr;
+  }
+
+  .plan-box{
+    flex-direction:column;
+    gap:15px;
+    text-align:center;
+  }
+
+}
+
+</style>
 
 </head>
 
 <body>
 
+<div class="container">
+
+  <!-- LOGO -->
+
+  <div class="logo">
+    <img src="dagazwifi.png">
+  </div>
+
+  <!-- TITLE -->
+
+  <div class="title">
+    <h1>PAIEMENT SÉCURISÉ</h1>
+
+    <p>
+      Choisis ton forfait et paie en toute sécurité
+    </p>
+  </div>
+
+  <!-- CARD -->
+
   <div class="card">
 
-    <h1>Accès WiFi Dagazz</h1>
+    <!-- PLAN -->
 
-    <div class="info">
-      Paiement pour 24 heures d'accès Internet
+    <div class="plan-box">
+
+      <div class="plan-left">
+
+        <div class="icon">
+          💎
+        </div>
+
+        <div class="plan-info">
+
+          <h3>
+            FORFAIT SÉLECTIONNÉ
+          </h3>
+
+          <h2 id="plan">
+            Chargement...
+          </h2>
+
+        </div>
+
+      </div>
+
+      <div class="price" id="prix">
+        0 FCFA
+      </div>
+
     </div>
 
-    <div class="price">
-      500 FCFA
+    <!-- TITLE -->
+
+    <div class="payment-title">
+      CHOISIS TON MOYEN DE PAIEMENT
     </div>
 
-    <a href="#" class="btn">Payer maintenant</a>
+    <!-- METHODS -->
+
+    <div class="payment-methods">
+
+      <!-- AIRTEL -->
+
+      <div class="method">
+
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Airtel_logo.svg">
+
+        <h3>AIRTEL MONEY</h3>
+
+        <div class="number" id="airtel">
+          077123456
+        </div>
+
+        <button class="copy-btn" onclick="copyNumber('airtel')">
+          Copier
+        </button>
+
+      </div>
+
+      <!-- MOOV -->
+
+      <div class="method">
+
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Moov_Africa_logo.png">
+
+        <h3>MOOV MONEY</h3>
+
+        <div class="number" id="moov">
+          078123456
+        </div>
+
+        <button class="copy-btn" onclick="copyNumber('moov')">
+          Copier
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- HOW -->
+
+    <div class="how">
+
+      <h2>COMMENT PAYER ?</h2>
+
+      <p>
+        1. Envoie le montant<br>
+        2. Entre le numéro transaction<br>
+        3. Clique sur "J'AI PAYÉ"<br>
+        4. Patiente 🚀
+      </p>
+
+    </div>
+
+    <!-- INPUT -->
+
+    <div class="input-box">
+
+      <label>
+        NUMÉRO DE TRANSACTION
+      </label>
+
+      <input type="text" placeholder="Ex: 1234567890">
+
+    </div>
+
+    <!-- BUTTON -->
+
+    <button class="pay-btn">
+      J'AI PAYÉ
+    </button>
+
+    <!-- FOOTER -->
+
+    <div class="secure">
+      🔒 Paiement sécurisé
+    </div>
 
   </div>
 
-</body>
+</div>
 
+<script>
+
+/* ================= RECUPERATION DES PARAMETRES ================= */
+
+const params = new URLSearchParams(window.location.search);
+
+const plan = params.get("plan");
+const prix = params.get("prix");
+
+/* ================= AFFICHAGE DU PLAN ================= */
+
+if(plan){
+
+  document.getElementById("plan").textContent = plan;
+
+}else{
+
+  document.getElementById("plan").textContent = "Abonnement";
+
+}
+
+/* ================= AFFICHAGE DU PRIX ================= */
+
+if(prix){
+
+  document.getElementById("prix").textContent = prix + " FCFA";
+
+}else{
+
+  document.getElementById("prix").textContent = "0 FCFA";
+
+}
+
+/* ================= COPIER NUMERO ================= */
+
+function copyNumber(id){
+
+  const text = document.getElementById(id).textContent;
+
+  navigator.clipboard.writeText(text);
+
+  alert("Numéro copié : " + text);
+}
+
+</script>
+
+</body>
 </html>
