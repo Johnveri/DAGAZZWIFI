@@ -1,3 +1,5 @@
+
+   
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -33,6 +35,7 @@ body{
   z-index:9999;
 }
 
+/* 🔥 LOGO SPLASH ULTRA GRAND */
 #splash-logo{
   position:absolute;
   top:50%;
@@ -42,11 +45,13 @@ body{
   animation:moveLogo 2.3s ease-in-out forwards;
 }
 
+/* 🔥 ANIMATION TRANSITION */
 @keyframes moveLogo{
   0%{
     top:50%;
     left:50%;
     width:220px;
+    opacity:1;
     transform:translate(-50%,-50%);
   }
 
@@ -54,16 +59,19 @@ body{
     top:40px;
     left:60px;
     width:150px;
+    opacity:1;
   }
 
   100%{
     top:30px;
     left:40px;
     width:100px;
+    opacity:1;
     transform:translate(0,0);
   }
 }
 
+/* ================= CONTENT ================= */
 #content{
   display:none;
 }
@@ -71,12 +79,13 @@ body{
 /* ================= HEADER ================= */
 .top{
   display:flex;
+  justify-content:flex-start;
   align-items:center;
   margin-bottom:25px;
 }
 
 .logo{
-  height:100px;
+  height:100px; /* 🔥 logo final */
 }
 
 /* ================= TITRE ================= */
@@ -101,43 +110,87 @@ h1{
   background:#141a22;
   border-radius:16px;
   padding:20px;
+  transition:0.3s;
 }
 
-/* COLORS */
-.basic{border:1px solid #2a2f3a;}
-.bronze{border:2px solid #cd7f32;}
-.argent{border:2px solid #c0c0c0;}
-.or{border:2px solid gold;}
+.card:hover{
+  transform:translateY(-8px);
+}
+
+/* BASIQUE */
+.basic{
+  border:1px solid #2a2f3a;
+}
+
+/* BRONZE */
+.bronze{
+  border:2px solid #cd7f32;
+  box-shadow:0 0 15px rgba(205,127,50,0.4);
+}
+
+/* ARGENT */
+.argent{
+  border:2px solid #c0c0c0;
+  box-shadow:0 0 15px rgba(192,192,192,0.4);
+}
+
+/* OR */
+.or{
+  border:2px solid gold;
+  box-shadow:0 0 18px rgba(255,215,0,0.5);
+}
 
 /* TEXT */
-.head{font-size:22px;font-weight:bold;}
-.speed{color:#9aa4b2;}
-.price{font-size:30px;font-weight:bold;}
-.duration{color:#f5c542;font-size:13px;margin-bottom:15px;}
+.head{
+  font-size:22px;
+  font-weight:bold;
+  margin-bottom:5px;
+}
 
+.speed{
+  color:#9aa4b2;
+  margin-bottom:10px;
+}
+
+.price{
+  font-size:30px;
+  font-weight:bold;
+}
+
+.duration{
+  color:#f5c542;
+  font-size:13px;
+  margin-bottom:15px;
+}
+
+/* BUTTON */
+button{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:10px;
+  background:#2563eb;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+  margin-bottom:15px;
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.05);
+}
+
+/* DETAILS */
 .info{
   font-size:13px;
   color:#cbd5e1;
   line-height:1.6;
 }
 
-/* ================= BUTTON ================= */
-.btn{
-  display:block;
-  width:100%;
-  padding:12px;
-  border-radius:10px;
-  background:#2563eb;
-  color:white;
-  text-align:center;
+.highlight{
+  color:#38bdf8;
   font-weight:bold;
-  text-decoration:none;
-  margin-bottom:15px;
-  transition:0.3s;
-}
-
-.btn:hover{
-  transform:scale(1.05);
 }
 
 </style>
@@ -146,21 +199,23 @@ h1{
 
 <body>
 
-<!-- SPLASH -->
+<!-- ================= SPLASH ================= -->
 <div id="splash">
   <img src="dagazwifi.png" id="splash-logo">
 </div>
 
-<!-- CONTENT -->
+<!-- ================= CONTENT ================= -->
 <div id="content">
 
+<!-- HEADER -->
 <div class="top">
   <img src="dagazwifi.png" class="logo">
 </div>
 
-<h1>Sélectionnez l’offre</h1>
-<p class="subtitle">Abonnement WiFi 24H</p>
+<h1>Sélectionnez l’offre qui vous convient</h1>
+<p class="subtitle">Abonnement WiFi valable 24 heures</p>
 
+<!-- ================= OFFRES ================= -->
 <div class="cards">
 
 <!-- BASIQUE -->
@@ -170,11 +225,15 @@ h1{
   <div class="price">250 FCFA</div>
   <div class="duration">Valable 24H</div>
 
-  <a href="paiement.html?plan=Basique&prix=250" class="btn">
-    Acheter
-  </a>
+ <button onclick="window.location.href='paiement.html?plan=Basique&prix=250'">
+  Acheter
+</button>
 
-  <div class="info">Navigation normale</div>
+  <div class="info">
+    Connexion réseaux sociaux : normale<br>
+    Navigation internet : normale<br>
+    Vidéo/audio : qualité normale
+  </div>
 </div>
 
 <!-- STANDARD -->
@@ -184,11 +243,16 @@ h1{
   <div class="price">400 FCFA</div>
   <div class="duration">Valable 24H</div>
 
-  <a href="paiement.html?plan=Standard&prix=400" class="btn">
-    Acheter
-  </a>
+ <button onclick="window.location.href='paiement.html?plan=Standard&prix=400'">
+  Acheter
+</button>
 
-  <div class="info">Streaming HD</div>
+  <div class="info">
+    <span class="highlight">Tout le Basique +</span><br>
+    Streaming HD<br>
+    Navigation rapide<br>
+    Vidéo fluide
+  </div>
 </div>
 
 <!-- PREMIUM -->
@@ -198,11 +262,16 @@ h1{
   <div class="price">500 FCFA</div>
   <div class="duration">Valable 24H</div>
 
-  <a href="paiement.html?plan=Premium&prix=500" class="btn">
-    Acheter
-  </a>
+  <button onclick="window.location.href='paiement.html?plan=Premium&prix=500'">
+  Acheter
+</button>
 
-  <div class="info">Gaming + HD</div>
+  <div class="info">
+    <span class="highlight">Tout le Standard +</span><br>
+    Gaming fluide<br>
+    Streaming Full HD<br>
+    Téléchargement rapide
+  </div>
 </div>
 
 <!-- LEGEND -->
@@ -212,22 +281,29 @@ h1{
   <div class="price">800 FCFA</div>
   <div class="duration">Valable 24H</div>
 
-  <a href="paiement.html?plan=Legende&prix=800" class="btn">
-    Acheter
-  </a>
+  <button onclick="window.location.href='paiement.html?plan=Legende&prix=800'">
+  Acheter
+</button>
 
-  <div class="info">Ultra rapide</div>
+  <div class="info">
+    <span class="highlight">Tout le Premium +</span><br>
+    conexion Ultra rapide<br>
+    Gaming compétitif<br>
+    Streaming 4K<br>
+    Priorité réseau
+  </div>
 </div>
 
 </div>
 
 </div>
 
+<!-- ================= SCRIPT ================= -->
 <script>
-setTimeout(()=>{
-  document.getElementById("splash").style.display="none";
-  document.getElementById("content").style.display="block";
-},2300);
+setTimeout(() => {
+  document.getElementById("splash").style.display = "none";
+  document.getElementById("content").style.display = "block";
+}, 2300);
 </script>
 
 </body>
